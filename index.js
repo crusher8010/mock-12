@@ -16,8 +16,8 @@ app.use(cors({
 
 app.use("/", productRoute);
 
-let dbConnection = process.env.Url.replace("<password>", process.env.password);
-mongoose.connect(dbConnection).then(() => console.log("Data Base is Connected")).catch((err) => console.log("Data Base Connection Failed"));
+const DB = process.env.URL.replace('<password>', process.env.password);
+mongoose.connect(DB).then(() => console.log("Database Connected")).catch((err) => console.log("Database Not Connected"));
 
 let port = process.env.port;
 app.listen(port, () => {
